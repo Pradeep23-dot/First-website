@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story: The First Time</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        /*
+        ========================================
+        CSS STYLES
+        ========================================
+        */
+
+        /* GLOBAL STYLES & MOBILE OPTIMIZATION */
+        body {
+            background-color: #000033; /* Very dark blue */
+            color: #FFA500; /* Orange text */
+            font-family: 'Kalam', cursive; /* Cute pookie-like handwritten font */
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+            -webkit-user-select: none; /* Disable text selection for better touch experience */
+            user-select: none;
+        }
+
+        .story-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        /* TITLES */
+        .story-title {
+            font-family: 'Press Start 2P', cursive;
+            color: #FF8C00;
+            font-size: 8vw;
+            text-align: center;
+            margin-bottom: 40px;
+            /* Neon glow for title */
+            text-shadow: 0 0 10px #FF8C00, 0 0 20px #FF8C00, 0 0 30px #FF4500;
+        }
+
+        .story-subtitle {
+            font-family: 'Press Start 2P', cursive;
+            color: #FFD700;
+            font-size: 5vw;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            text-shadow: 0 0 8px #FFD700, 0 0 15px #FFD700;
+        }
+
+        /* PARAGRAPHS */
+        .story-paragraph {
+            font-size: 4.5vw; /* Responsive font size */
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        /* NEON GLOW EFFECT FOR WORDS */
+        .story-paragraph span.neon-word {
+            display: inline-block;
+            position: relative;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: text-shadow 0.3s ease-out, color 0.3s ease-out;
+            padding: 2px 0;
+        }
+
+        .story-paragraph span.neon-word:hover,
+        .story-paragraph span.neon-word.glow-active {
+            color: #FFF; /* White inside glow */
+            text-shadow: 0 0 5px #FFA500,
+                         0 0 15px #FFA500,
+                         0 0 25px #FFA500,
+                         0 0 40px #FF4500,
+                         0 0 60px #FF4500;
+        }
+
+        /* IMAGE PLACEHOLDERS (The white boxes you requested) */
+        .image-placeholder {
+            background-color: #FFFFFF; /* White placeholder box */
+            width: 90vw;
+            height: 60vw;
+            max-width: 450px;
+            max-height: 300px;
+            margin: 40px auto;
+            border: 2px solid #FFA500; /* Orange border */
+            box-shadow: 0 0 5px #FFA500, 0 0 15px #FF4500; /* Subtle orange glow around the box */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0; /* Keep image invisible until you add a real source */
+        }
+
+        /* NEXT PAGE BUTTON */
+        .end-of-page-section {
+            text-align: center;
+            padding: 80px 0 100px 0;
+        }
+
+        .next-page-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #FFA500; /* Orange button */
+            color: #000033; /* Dark blue text */
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 4vw; /* Responsive font size */
+            border-radius: 8px;
+            border: 3px solid #FFD700;
+            box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .next-page-btn:hover {
+            box-shadow: 0 0 15px #FFD700, 0 0 30px #FFD700, 0 0 45px #FF4500;
+            transform: scale(1.05);
+        }
+
+        /* BUTTERFLY EFFECT STYLES */
+        .butterfly {
+            position: fixed;
+            font-size: 30px;
+            pointer-events: none;
+            z-index: 1000;
+            animation: flyUp 4s ease-out forwards;
+        }
+
+        @keyframes flyUp {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px) rotate(360deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* Media Query for larger screens (e.g., desktop/tablets) */
+        @media (min-width: 600px) {
+            .story-title { font-size: 40px; }
+            .story-subtitle { font-size: 25px; }
+            .story-paragraph { font-size: 1.2rem; }
+            .next-page-btn { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="story-container">
+        <h1 class="story-title">That Girl In College</h1>
+
+        <p class="story-paragraph">
+            I First Saw YOU When we gone to BSNL. She (You) were wearing
+            <span class="neon-word">#$^&amp;&amp;^%$ Color</span>
+            that day. I saw Only a Few Times 👉👈.
+        </p>
+
+        <div class="image-placeholder">
+            <img id="story-image-1" src="" alt="First memory image" class="story-image">
+        </div>
+
+        <p class="story-paragraph">
+            Clg open aaguradhuku Munaadi BSNL ku kutitu ponaanga nyabagam irukaa.
+            Anda Moment Varai I Never Saw Any Girl In Our College, Oru Room la one side full boys opposite full ah girls.
+        </p>
+
+        <div class="image-placeholder">
+            <img id="story-image-2" src="" alt="BSNL trip memory" class="story-image">
+        </div>
+
+        <p class="story-paragraph">
+            Apothaan First Time Na Enoda Head ah lift panni paten Girls side la Paata
+            <span class="neon-word">First And Last Face</span>
+            Avaloda face dhaan (I still remember She were in the far right Side of the crowd).
+        </p>
+
+        <div class="image-placeholder">
+            <img id="story-image-3" src="" alt="Far right side memory" class="story-image">
+        </div>
+
+        <p class="story-paragraph">
+            Apo Aval Face ummunu sad ah paavama
+            <span class="neon-word">INNOCENT ah vechirndaal like this😐</span>
+            (AYOOOOOOO CUTEST FACE I'VE EVER SEEN). APdiayy Anda cheeks while she was like😐(Apdiyay Panchumittaiii Kannam alaghiiii).
+        </p>
+        
+        <h2 class="story-subtitle">What Going on my mind at the moment</h2>
+
+        <p class="story-paragraph">
+            Apo Avala real ah
+            <span class="neon-word">5 seconds keela than paaturpen</span>
+            ana i still remember every detail.
+        </p>
+
+        <div class="image-placeholder">
+            <img id="story-image-4" src="" alt="Every detail memory" class="story-image">
+        </div>
+
+        <p class="story-paragraph">
+            Aval height ah um irundaal ana kullamaavum irundaal Alaghaa Scarf meri shawl poturndaal (that shawl bigger than Her neck😂Aval Neck Kullama ADORABLE ah irunchu). Aval mattum thaan unique ah poturndaal anda shawl ah, Avala paatadhum
+            <span class="neon-word">Apo love panra nelamai la naa ilai</span>,
+            oru Hard Situation already going in life. Apayum Avala paakuradhey Oru jolly ah irunchu 😁.
+        </p>
+
+        <div class="image-placeholder">
+            <img id="story-image-5" src="" alt="Jolly mood memory" class="story-image">
+        </div>
+
+        <p class="story-paragraph">
+            But Avala paatadhumm instantly "<span class="neon-word">Cute aah irukaal inda PONNU</span>" nu mind la oodichi epdinaa mind la cute aah irukaal nu anda sentence kuda utter aagala but somehow My Mind Agreed She is SOOOO MUCH CUTE DAYUMMM...
+        </p>
+
+        <div class="image-placeholder">
+            <img id="story-image-6" src="" alt="Cute feeling image" class="story-image">
+        </div>
+
+        <p class="story-paragraph">
+            Aprm odaney anda insant la Ival veedu enga irukum🤔? ival already cmmtd ah😱? ival ean ipdi kullama cute aah alaghaana ponna irukaal😍? inda merilaam ponnu rare aachey ayoo ival name ennava irukum🤔?Ival ean soogama irukaal😐🤔? Ival Gf ah irunda epdilaa pesuvaa? silent ah irukaaley ival velila la sutuvaala? loves first panuvaala ival veedu epdi
+            idhu elaamey onnu vidaama anda instant la
+            <span class="neon-word">toonichu</span>.
+        </p>
+
+        <p class="story-paragraph">
+            basically unna sight adichi osichen konjam seconds elaamey aprm again leave aagiten(small disappointment that am leaving and small hope i will see u again). En situation apdi but viturnda Vilundurpen apovey😍.
+        </p>
+
+        <div class="image-placeholder">
+            <img id="story-image-7" src="" alt="Sight memory" class="story-image">
+        </div>
+
+        <p class="story-paragraph">
+            Aprm i forced myself to leave and stop thinking about u because sadly i have no time for sight adichifying 😭 (i wanted to take another look). Aprma i forgot about You for a while Then Mela Round Table vechi oru Room irunchu anga Aval enaku Opposite la ukantaal avala oru time paatutuen thalaya nimundu
+            <span class="neon-word">PAAA SEMMA CUTE MUTTA MULI MULIKURAAL 😐IPDIYAYYY</span>.
+        </p>
+
+        <div class="image-placeholder">
+            <img id="story-image-8" src="" alt="Round table memory" class="story-image">
+        </div>
+
+        <p class="story-paragraph">
+            Aprm guninjiten Aval was like very short yet slim and GORGEOUS. Apmrm na guninjtenaa but deep down I wanted to take another Look😭🙏. Aprm Aval Kita optical Fibre vechi edho question ketaanga
+            <span class="neon-word">Since then Optical fibre has became a special word for me</span>.
+            Adhuku aval answer panaal but i was too scared to listen so i didn't heard her voice properly.
+        </p>
+
+        <div class="image-placeholder">
+            <img id="story-image-9" src="" alt="Optical fibre memory" class="story-image">
+        </div>
+
+        <p class="story-paragraph">
+            Aprm angerndu poitom but i think i saw her in a queue befor entering a room(only her dress).
+        </p>
+
+        <p class="story-paragraph">
+            Aval paakvey Kullama Gorgeous ah irundaal ana height ah irundaal. Seri Epdinaa Unoda Face irundudhaa adhu Romba White aah ilaama dark aah ilaama perfectly irunchu Adhvum chinnadha moon meri, nee vera kulama therincha en kannuku and epdii solradhu un kannam chubby aah irundudhu(apdiayy pidichi killanum toonichu) un eyes perfect U eyebrows perfect ,un forhead being the most beautiful Thing I've ever saw in a human ,unoda shawl nee mattum unique ah potunrda
+            <span class="neon-word">i wanted take another look again and again and again and again now it all feels like a Dream</span>
+            And Yessss I saw All these Beauty in that few times but forgot But now i remember them everyday.
+        </p>
+
+        <div class="image-placeholder">
+            <img id="story-image-10" src="" alt="Beauty details memory" class="story-image">
+        </div>
+
+        <p class="story-paragraph">
+            Apo Aval face 😐 Probably u were bored (Semma Cute apdiyayyy Panchumittaai meri Cheeks Small aana shiny aana un face la).
+        </p>
+
+        <p class="story-paragraph final-message">
+            Na vitaaa Solitey irupen inda page la pataadhu adhuku Nee enaku ok sonnadhum Detailed ah solren Thango
+        </p>
+        
+        <div class="end-of-page-section">
+             <a href="dummy-next-page.html" class="next-page-btn">
+                Time travel to 23rd august
+            </a>
+        </div>
+        
+    </div>
+
+    <script>
+        /*
+        ========================================
+        JAVASCRIPT (BUTTERFLY & GLOW EFFECTS)
+        ========================================
+        */
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Butterfly Effect on Touch/Click
+            const butterfly = (e) => {
+                const x = e.clientX || (e.touches && e.touches[0].clientX);
+                const y = e.clientY || (e.touches && e.touches[0].clientY);
+
+                if (x === undefined || y === undefined) return;
+
+                const butterflies = ['🦋', '🧡', '💖', '✨']; 
+                const count = 3 + Math.floor(Math.random() * 3);
+
+                for (let i = 0; i < count; i++) {
+                    const span = document.createElement('span');
+                    span.classList.add('butterfly');
+                    span.textContent = butterflies[Math.floor(Math.random() * butterflies.length)];
+                    
+                    span.style.left = `${x + (Math.random() - 0.5) * 40}px`; 
+                    span.style.top = `${y + (Math.random() - 0.5) * 40}px`;
+                    
+                    span.style.animationDuration = `${3 + Math.random() * 2}s`; 
+
+                    document.body.appendChild(span);
+
+                    setTimeout(() => {
+                        span.remove();
+                    }, 5000); 
+                }
+            };
+
+            document.addEventListener('click', butterfly);
+            document.addEventListener('touchstart', butterfly);
+
+
+            // 2. Neon Glow Effect on Word Touch/Click
+            const neonWords = document.querySelectorAll('.neon-word');
+            
+            neonWords.forEach(word => {
+                // Toggle glow class on click/touch for mobile interaction
+                word.addEventListener('click', function() {
+                    // Remove glow from all other words
+                    neonWords.forEach(w => {
+                        if (w !== this) {
+                            w.classList.remove('glow-active');
+                        }
+                    });
+                    // Toggle the glow on the clicked word
+                    this.classList.toggle('glow-active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
